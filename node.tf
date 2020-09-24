@@ -1,6 +1,6 @@
 resource "bigip_ltm_node" "node" {
   name             = "/Common/kibana_node"
-  address          = "1.1.1.1"
+  address          = "10.10.10.10"
   connection_limit = "0"
   dynamic_ratio    = "1"
   monitor          = "/Common/icmp"
