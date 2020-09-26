@@ -1,8 +1,8 @@
 import requests
 import sys
 requests.packages.urllib3.disable_warnings()
-#x = requests.get('https://archiva.mpgsdev.mastercard.int/', verify=False)
-x = requests.get('http://repo.mpgsdev.mastercard.int', verify=False)
+x = requests.get('https://archiva.mpgsdev.mastercard.int/', verify=False)
+#x = requests.get('http://repo.mpgsdev.mastercard.int', verify=False)
 
 print("check - https://archiva.mpgsdev.mastercard.int/")
 print (x.status_code)
