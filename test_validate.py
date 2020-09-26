@@ -6,7 +6,7 @@ print("check - https://archiva.mpgsdev.mastercard.int/")
 print (x.status_code)
 if (x.status_code != 200):
   print("Fail")
+  exit()
+  print("ssssssssss")
 else:
   print("Pass")
-
-
