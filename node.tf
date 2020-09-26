@@ -1,4 +1,4 @@
-resource "bigip_ltm_node" "node" {
+resource "bigip_ltm_node" "knode" {
   name             = "/Common/kibana_node"
   address          = "10.10.10.20"
   connection_limit = "0"
