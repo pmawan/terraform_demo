@@ -27,7 +27,6 @@ resource "bigip_ltm_virtual_server" "http" {
         destination = "10.169.172.196"
         port = 443
         client_profiles = ["/Common/clientssl"]
-        server_profiles = ["/Common/serverssl"]
         source_address_translation = "automap"
         depends_on = [bigip_ltm_pool.pool]
 }
