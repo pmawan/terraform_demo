@@ -1,8 +1,3 @@
-#create device ucs
-resource "bigip_command" "create-ucs" {
-  commands   = ["save sys ucs bip0syd0-pre-crq.ucs"]
-}
-
 
 resource "bigip_ltm_node" "node" {
   name             = "/Common/kibana_node"
@@ -26,13 +21,13 @@ resource "bigip_ltm_pool_attachment" "attach_node" {
 }
 
 
-
-
 resource "bigip_ltm_virtual_server" "http" {
         pool = "/Common/kibana-pool"
         name = "/Common/kibana_vs_http"
-        destination = "10.1.10.100"
-        port = 80
+        destination = "10.169.172.196"
+        port = 443
+        client_profiles = ["/Common/clientssl"]
+        server_profiles = ["/Common/serverssl"]
         source_address_translation = "automap"
         depends_on = [bigip_ltm_pool.pool]
 }
