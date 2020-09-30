@@ -12,7 +12,7 @@ print("check - https://repo.mpgsdev.mastercard.int")
 print (x.status_code)
 
 ##repo.mpgsdev.mastercard.int
-x = requests.get('https://kibana_vs', verify=False)
-print("check - https://10.169.72.196/")
+x = requests.get('https://10.169.172.196', verify=False)
+print("check - https://kibana_vs/")
 #print(x.text)
 print (x.status_code)
