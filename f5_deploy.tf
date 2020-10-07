@@ -14,7 +14,7 @@ resource "bigip_ltm_pool" "kpool" {
   allow_snat          = "yes"
   allow_nat           = "yes"
 }
-resource "bigip_ltm_pool_attachment" "attach_node" {
+resource "bigip_ltm_pool_attachment" "kattach_node" {
   pool = "/Common/${var.env_name}.kibana-pool"
   node = "/Common/kibana_node:5601"
   depends_on = [bigip_ltm_pool.kpool]
