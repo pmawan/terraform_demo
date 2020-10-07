@@ -6,7 +6,7 @@ resource "bigip_ltm_node" "knode" {
   dynamic_ratio    = "1"
   monitor          = "/Common/icmp"
 }
-resource "bigip_ltm_pool" "pool" {
+resource "bigip_ltm_pool" "kpool" {
   name                = "/Common/${var.env_name}.kibana-pool"
   load_balancing_mode = "round-robin"
   description         = "${var.env_name}.Kibana Pool"
@@ -17,7 +17,7 @@ resource "bigip_ltm_pool" "pool" {
 resource "bigip_ltm_pool_attachment" "attach_node" {
   pool = "/Common/${var.env_name}.kibana-pool"
   node = "/Common/kibana_node:5601"
-  depends_on = [bigip_ltm_pool.pool]
+  depends_on = [bigip_ltm_pool.kpool]
 }
 
 
@@ -28,5 +28,5 @@ resource "bigip_ltm_virtual_server" "http" {
         port = 443
         client_profiles = ["/Common/clientssl"]
         source_address_translation = "automap"
-        depends_on = [bigip_ltm_pool.pool]
+        depends_on = [bigip_ltm_pool.kpool]
 }
