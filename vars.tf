@@ -12,7 +12,7 @@ variable "vname" {
 }
 variable "vpconport" {
     type = list
-    default = ["98765", "98764", "98763", "98762", "98761", "98766", "98767", "98768"]
+    default = ["8765", "8764", "8763", "8762", "8761", "8766", "8767", "8768"]
 }
 variable "pname" {
     type = list
@@ -24,4 +24,7 @@ variable "pcon_tns_url" {
 }
 variable "vip_ip" {
     default = "10.10.10.20"
+}
+variable "node_port" {
+    default = "443"
 }
