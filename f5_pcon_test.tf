@@ -19,6 +19,7 @@ resource "bigip_ltm_node" "node" {
   address          = var.pcon_tns_url[count.index]
   connection_limit = "0"
   dynamic_ratio    = "1"
+  depends_on = [bigip_ltm_pool.pool]
 
 }
 
