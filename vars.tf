@@ -20,7 +20,7 @@ variable "pname" {
 }
 variable "pcon_tns_url" {
     type = list
-    default = ["e31232.a.akamaiedge.net", "jenkins.io"]
+    default = ["10.157.146.32", "10.157.149.168"]
 }
 variable "vip_ip" {
     default = "10.10.10.20"
