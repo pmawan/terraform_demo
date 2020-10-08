@@ -1,3 +1,7 @@
+variable "env" {
+    type = string
+    default = "dev"
+}
 variable "env_name" {
     type = string
     default = "dev"
