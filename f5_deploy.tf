@@ -5,7 +5,7 @@ resource "bigip_ltm_node" "knode" {
   connection_limit = "0"
   dynamic_ratio    = "1"
   monitor          = "/Common/icmp"
-  depends_on = [bigip_ltm_pool.kpool]
+  
 }
 resource "bigip_ltm_pool" "kpool" {
   name                = "/Common/${var.env_name}.kibana-pool"
