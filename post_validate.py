@@ -21,11 +21,11 @@ else:
   print("Pass")
 
 ##kibana VS
-#x = requests.get('https://10.169.172.196', verify=False)
-#print("check - https://kibana_vs/")
-#print (x.status_code)
-#if (x.status_code != 200):
-  #print("Fail")
-  #sys.exit("404 error")
-#else:
-  #print("Pass")
+x = requests.get('https://10.169.172.196', verify=False)
+print("check - https://kibana_vs/")
+print (x.status_code)
+if (x.status_code != 200):
+  print("Fail")
+  sys.exit("404 error")
+else:
+  print("Pass")
