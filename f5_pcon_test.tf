@@ -54,7 +54,7 @@ resource "bigip_ltm_pool_attachment" "attach_node" {
   count = length(var.vname)
   pool = "/Common/${var.env_name}.outbound.gateway.mastercard.int-dev-YYY-${var.vname[count.index]}-pool"
   node = "/Common/${var.pcon_tns_url[0]}:443"
-  depends_on = [bigip_ltm_pool.pool]
+  depends_on = [bigip_ltm_pool.pool, bigip_ltm_node.node]
 }
 
 
