@@ -21,7 +21,7 @@ else:
   print("Pass")
 
 ##kibana VS
-x = requests.get('https://10.169.172.196', verify=False)
+x = requests.get('https://10.157.159.44:14443', verify=False)
 print("check - https://kibana_vs/")
 print (x.status_code)
 if (x.status_code != 200):
